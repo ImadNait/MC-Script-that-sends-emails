@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 const path = require('path');
 const transporter = nodemailer.createTransport({
     host:'stmp.gmail.com',
@@ -6,13 +7,13 @@ const transporter = nodemailer.createTransport({
     service:'gmail',
     secure:false,
     auth:{
-        user:"philnait2013@gmail.com",
-        pass:"gbnz kvps cmtv uzmk",
+        user:process.env.user_smtp,
+        pass:process.env.pass_smtp,
     }
     })
 
     const mailOptions ={
-    from:"philnait2013@gmail.com",
+    from:pass_smtp,
     to:"naitmihoubimzd@gmail.com",
     subject:`Sending Email using NodeJS`,
     text:'Heyy wassup',
